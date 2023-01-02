@@ -1,4 +1,5 @@
 SRC += muse.c
 
+BOOTMAGIC_ENABLE = no
 MOUSEKEY_ENABLE = yes
 USER_NAME := AngeIo
