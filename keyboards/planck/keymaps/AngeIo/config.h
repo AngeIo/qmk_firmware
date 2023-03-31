@@ -16,14 +16,16 @@
 
 #pragma once
 
+#define AUDIO_INIT_DELAY
+
 #ifdef AUDIO_ENABLE
-// AngeIo
-#    define AUDIO_INIT_DELAY
+    #define STARTUP_SONG SONG(SONIC_RING)
+    // #define STARTUP_SONG SONG(PLANCK_SOUND)
+    // #define GOODBYE_SONG SONG(MEGALOVANIA)
+    // #define GOODBYE_SONG SONG(ONE_UP_SOUND)
+    #define GOODBYE_SONG SONG(COIN_SOUND)
 
-#    define STARTUP_SONG SONG(PLANCK_SOUND)
-// #define STARTUP_SONG SONG(NO_SOUND)
-
-#    define DEFAULT_LAYER_SONGS \
+    #define DEFAULT_LAYER_SONGS \
         { SONG(QWERTY_SOUND), SONG(COLEMAK_SOUND), SONG(DVORAK_SOUND) }
 #endif
 
@@ -51,7 +53,7 @@
 // Most tactile encoders have detents every 4 stages
 #define ENCODER_RESOLUTION 4
 
-//AngeIo
 #define MK_KINETIC_SPEED
 #define MOUSEKEY_INITIAL_SPEED 20
 #define MK_VARIANT MK_TYPE_KINETIC
+#define FORCE_NKRO
