@@ -1,6 +1,6 @@
-Personal config for my Planck keyboard here :
-
 **[AngeIo](keyboards/planck/keymaps/AngeIo)**
+
+^ Personal config for my Planck keyboard here ^
 
 # Quantum Mechanical Keyboard Firmware
 
