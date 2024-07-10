@@ -220,6 +220,7 @@ layer_state_t layer_state_set_user(layer_state_t state) {
 }
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+  led_t led_state = host_keyboard_led_state();
   switch (keycode) {
     case QWERTY:
       if (record->event.pressed) {
@@ -366,7 +367,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       return false;
       break;
     case KC_CAPS:
-      if (host_keyboard_leds() & (1 << USB_LED_CAPS_LOCK)) {
+      if (led_state.caps_lock) {
           #ifdef AUDIO_ENABLE
               PLAY_SONG(tone_caps_off);
           #endif
@@ -377,7 +378,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
           #endif
       }
     case KC_NUM:
-      if (host_keyboard_leds() & (1 << USB_LED_NUM_LOCK)) {
+      if (led_state.num_lock) {
           #ifdef AUDIO_ENABLE
               PLAY_SONG(tone_numlk_off);
           #endif
@@ -388,7 +389,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
           #endif
       }
     case KC_SCRL:
-      if (host_keyboard_leds() & (1 << USB_LED_SCROLL_LOCK)) {
+      if (led_state.scroll_lock) {
           #ifdef AUDIO_ENABLE
               PLAY_SONG(tone_scroll_off);
           #endif
