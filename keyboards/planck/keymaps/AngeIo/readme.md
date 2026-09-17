@@ -11,6 +11,8 @@ Similar to default layout with some minor changes:
 - `cd /path/to/qmk_firmware`
 - Run the install script `util/qmk_install.sh`
 - Ensure latest libraries are loaded `make git-submodule`
+- Build locally
+  - `make planck/rev6:AngeIo`
 - Build with docker
   - Planck Rev. 6 : `util/docker_build.sh planck/rev6:AngeIo`
 - Build with Vagrant
@@ -22,3 +24,5 @@ Similar to default layout with some minor changes:
   - Using dfu-programmer `dfu-programmer atmega32u4 erase --force && dfu-programmer atmega32u4 flash .build/planck_rev4_narze.hex`
     - For Planck Light change the target microcontroller `dfu-programmer at90usb1286 erase --force && dfu-programmer at90usb1286 flash .build/planck_light_narze.hex`
   - Use [QMK Toolbox](https://github.com/qmk/qmk_toolbox/releases)
+- Build and flash locally
+  - `make planck/rev6:AngeIo:dfu-util`

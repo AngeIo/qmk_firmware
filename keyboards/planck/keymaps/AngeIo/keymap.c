@@ -366,17 +366,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
       }
       return false;
       break;
-    case KC_CAPS:
-      if (led_state.caps_lock) {
-          #ifdef AUDIO_ENABLE
-              PLAY_SONG(tone_caps_off);
-          #endif
-      }
-      else {
-          #ifdef AUDIO_ENABLE
-              PLAY_SONG(tone_caps_on);
-          #endif
-      }
     case KC_NUM:
       if (led_state.num_lock) {
           #ifdef AUDIO_ENABLE
